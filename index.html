@@ -1,0 +1,280 @@
+<html>
+<head>
+	<title>
+	TheGymDiaries
+	</title>
+	    <meta charset="utf-8" content="width=device-width, initial-scale=1.0">
+	    <link rel="stylesheet" href="screen.css" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister" rel="stylesheet">
+	<script src="Chart.js"></script>
+	</head>
+<body>
+<div >
+
+<center>
+	<table id="heading">
+		<tr>
+	<th colspan="4">
+<!--		Heading goes here     -->
+		<img src="gymPics/TheGymJournal2.jpg" width="100%">
+	</th>
+		</tr>
+	</table>
+
+		<button id="target">
+			<img src="gymPics/shoe-icon-27.png" width="30px" height="30px">
+<!--			previous targets will be saved here-->
+			<b>All Targets </b>
+		</button>
+
+	<td width="30%">
+		<button id="progress">
+		<img src="gymPics/muscle-icon-10.png" width="30px" height="30">
+<!--			Progress reports-->
+			<b>Your Progress</b>
+		</button>
+	</td>
+		<td>
+		<button id="home">
+			<img src="gymPics/Home-512.png" height="40px" width="40px" class="home">
+		</button>
+
+	</center><br>
+
+<!--	///////////////////////////////////////////////-->
+<center>
+<div id="daysSince">
+
+</div>
+</center>
+<br>
+	<form id="agendaForm">
+	<table id="agenda">
+<!--		row 1-->
+	<tr>
+	<td>
+		<img src="gymPics/flat_icons-graficheria.it-06.png" width="50px" height="50px">
+	</td>
+		<td>
+			<h2>Todays target:</h2>
+		</td>
+	</tr>
+
+		<tr>
+		<td>
+		Running (Km):
+		</td>
+		<td id="Running">
+
+		</td>
+		</tr>
+		<tr>
+		<td>
+		Squats:
+		</td>
+		<td id="Squats">
+		</td>
+		</tr>
+		<tr>
+		<td>
+		Crunches:
+		</td>
+		<td id="Crunches">
+		</td>
+		</tr>
+		<tr>
+		<td>
+		Leg lifts:
+		</td>
+		<td id="lifts">
+		</td>
+		</tr>
+		<tr>
+		<td>
+		Russian twists:
+		</td>
+		<td id="twists">
+		</td>
+		</tr>
+		<tr>
+		<td>
+		Jumping jacks:
+		</td>
+		<td id="jacks">
+		</td>
+		</tr>
+
+
+	<br>
+		<tr>
+			<td>
+
+		</td>
+		</tr>
+	</table>
+	</form>
+	<br>
+
+
+	<br>
+	<table id="goals" width="100%" class="goalForm">
+	<tr>
+	<td>
+	<img src="gymPics/Achievement_Goal_Mission_Vision_Graph_Profit_Investment-512.png" widt="50px" height="50px">
+	</td>
+		<td>
+		<h2>What goals did you reach?</h2>
+		</td>
+	</tr>
+<tr><td>
+	<h3>Day: <input type="text" id="dayInput"></h3></td>
+		</tr>
+		<tr>
+		<td>
+		Running (Km):
+		</td>
+		<td>
+<input type="text" id="run"/>
+	   </td>
+		</tr>
+		<tr>
+		<td>
+		Squats:
+		</td>
+		<td>
+<input type="text" id="squatting"/>
+		</td>
+		</tr>
+		<tr>
+		<td>
+		Crunches:
+		</td>
+		<td>
+<input type="text" id="crunchie"/>
+		</td>
+		</tr>
+
+		<tr>
+		<td>
+		Leg lifts:
+		</td>
+		<td>
+<input type="text" id="lift"/>
+		</td>
+		</tr>
+		<tr>
+		<td>
+		Russian twists:
+		</td>
+		<td>
+<input type="text" id="twisty"/>
+		</td>
+		</tr>
+		<tr>
+		<td>
+		Jumping jacks:
+		</td>
+		<td>
+<input type="text" id="jacky"/>
+		</td>
+		</tr>
+
+
+	<br>
+		<tr>
+
+<td>
+            <br>
+            <img src="gymPics/20151012_561baea86eeca-210x210.png" width="30px" height="30px">
+            <button id="saveAchievement">Save Achievements</button>
+		</td>
+		</tr>
+	</table>
+<br>
+<!-- previous targets	/////////////////////////////////////////-->
+<div class="row-1">
+	<div class="col-1">
+<div class="allTargets">
+	<script class="targetList" type="text/handlebars-x">
+	{{#each targetList}}
+	<div class="targetDisplay">
+	<h1>Day: {{day}}</h1>
+		<h2>Target for the day:</h2>
+	<ul class="target">
+		<li>Running (Km): {{target.running}} </li>
+		<li>Squats : {{target.squats}} </li>
+		<li>Crunches : {{target.crunches}} </li>
+		<li>Leg lifts : {{target.lifts}} </li>
+		<li>Russian twists : {{target.twists}} </li>
+		<li>Jumping jacks : {{target.jacks}} </li>
+	</ul>
+	</div>
+	</div><br>
+	{{/each}}
+	</script>
+	</div>
+</div>
+	<div class="col-2">
+	<div class="allActual">
+		<script class="actualList" type="text/handlebars-x">
+		{{#each actualList}}
+	<div id="actualDisplay">
+	<h1>Day: {{day}}</h1>
+	<h2>Achievement for the day:</h2>
+	<ul class="actual">
+		<li>Running (Km): {{running}} </li>
+		<li>Squats : {{squats}} </li>
+		<li>Crunches : {{crunches}} </li>
+		<li>Leg lifts : {{lifts}} </li>
+		<li>Russian twists : {{twists}} </li>
+		<li>Jumping jacks : {{jacks}} </li>
+	</ul>
+	</div>
+	</div>
+	{{/each}}
+	</script>
+	</div>
+</div>
+	
+	<br>
+<div class="runProgress">
+<canvas id="runChart">
+	
+</canvas>	
+</div>
+    <br>
+<div class="squatProgress">
+<canvas id="squatChart">
+	
+</canvas>	
+</div>
+        <br>
+<div class="crunchProgress">
+<canvas id="crunchChart">
+	
+</canvas>	
+</div>
+            <br>
+<div class="liftProgress">
+<canvas id="liftChart">
+	
+</canvas>	
+</div>
+               <br>
+<div class="twistProgress">
+<canvas id="twistChart">
+	
+</canvas>	
+</div>           <br>
+<div class="jackProgress">
+<canvas id="jackChart">
+	
+</canvas>	
+</div>
+</div>
+	</div>
+		<script type="text/javascript" src="handlebars/handlebars-v4.0.5.js"></script>
+	<script src="target.js"></script>
+	<script src="screen.js"></script>
+</body>
+</html>
